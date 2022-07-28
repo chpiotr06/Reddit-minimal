@@ -1,0 +1,27 @@
+.flex-column {
+  color: #FFE3D8;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-color: #371B58;
+  padding: 20px 10px;
+  border-radius: 3vh;
+  width: 90%;
+  -webkit-box-shadow: 5px 5px 20px -7px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 5px 5px 20px -7px rgba(66, 68, 90, 1);
+  box-shadow: 5px 5px 20px -7px rgba(66, 68, 90, 1);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+.first {
+  border-top: 1px solid white;
+  padding-top: 10px;
+}
+.symbols {
+  padding-left: 7px;
+}
