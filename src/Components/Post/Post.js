@@ -4,10 +4,10 @@ import { Media } from '../Media/Media'
 import "./Post.css";
 
 export const Post = ({author, likes, awards, media, title, date}) => {
-  
+  const { hasMedia } = media
   return (
     <div className="flex-column">
-      <Media media={media} />
+      {hasMedia ? <Media media={media} /> : undefined}
       <div className="post-title">
         <h1>{title}</h1>
       </div>
@@ -17,7 +17,7 @@ export const Post = ({author, likes, awards, media, title, date}) => {
         </div>
         <div className="flex-row">
           <div>{likes}</div>
-          <div class="material-symbols-outlined symbols">
+          <div className="material-symbols-outlined symbols">
             favorite
           </div>
         </div>
@@ -28,7 +28,7 @@ export const Post = ({author, likes, awards, media, title, date}) => {
         </div>
         <div className="flex-row">
           <div>{awards}</div> 
-          <div class="material-symbols-rounded symbols">
+          <div className="material-symbols-rounded symbols">
             workspace_premium
           </div>
         </div>
