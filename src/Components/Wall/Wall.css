@@ -1,0 +1,8 @@
+.wall { 
+  width: 40%;
+  margin: 0 auto;
+  background-color: #5B4B8A;
+  padding: 10px;
+  border-radius: 3vh;
+  margin-top: 30px;
+}
