@@ -30,6 +30,7 @@ const wallSlice = createSlice({
       state.hasError = false;
     },
     [fetchPosts.fulfilled]: (state, action) => {
+      console.log(action.payload)
       const {after, posts} = normalizePostData(action.payload.data)
       state.isLoading = false;
       state.hasError = false;

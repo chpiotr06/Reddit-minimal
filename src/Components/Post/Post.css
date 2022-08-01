@@ -18,6 +18,12 @@
   justify-content: space-between;
   margin: 5px;
 }
+
+.over-18 {
+  -webkit-filter: blur(7px);
+  filter: blur(7px);
+}
+
 .first {
   border-top: 1px solid white;
   padding-top: 10px;

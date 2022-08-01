@@ -1,0 +1,26 @@
+.holder {
+  width: 40vw;
+  height: 40vw;
+  padding: 10px;
+  background-color: #5B4B8A;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3vh;
+}
+
+.circle {
+  width: 20vh;
+  height: 20vh;
+  border: 4px solid #FFE3D8;
+  border-bottom: none;
+  border-left: none;
+  border-radius: 50%;
+  animation: circle 0.5s linear infinite;
+}
+
+@keyframes circle {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(360deg)}
+}
