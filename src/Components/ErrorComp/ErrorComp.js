@@ -13,7 +13,7 @@ export const ErrorComp = () => {
     <div className="error-wrapper">
       <span class="material-symbols-outlined error">error</span>
       <h2>An error has occurred. Check your internet connection and try again in few minutes.</h2>
-      <button onClick={handleClick}>Retry</button>
+      <button className='error-btn' onClick={handleClick}>Retry</button>
     </div>
   )
 }

@@ -5,4 +5,22 @@
   padding: 10px;
   border-radius: 3vh;
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1300px){
+  .wall { 
+    width: 60%;
+  }
+  h1{
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .wall { 
+    width: 90%;
+  }
 }

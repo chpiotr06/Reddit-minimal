@@ -14,7 +14,7 @@ export const Post = ({author, likes, awards, media, title, subreddit, selftext, 
     <div className={`flex-column ${over_18 ? 'over-18' : ''}`}>
       {hasMedia ? <Media media={media} /> : undefined}
       <div className="post-title">
-        <a href={`https://reddit.com${permalink}`} target="_blank" rel="noopener noreferrer"><h1>{title}</h1></a>
+        <a className="post-title-text" href={`https://reddit.com${permalink}`} target="_blank" rel="noopener noreferrer"><h1>{title}</h1></a>
         {
           isRedditMediaDomain ? undefined : 
           (<div>
