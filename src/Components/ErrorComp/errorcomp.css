@@ -1,0 +1,12 @@
+.error {
+  font-size: 200px;
+  color: #B93160;
+}
+.error-wrapper {
+  color: #FFE3D8;
+  background-color: #5B4B8A;
+  border-radius: 3vh;
+  margin: 30px auto;
+  width: 40%;
+  padding: 15px;
+}
