@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import "./Wall.css";
 import { Post } from "../Post/Post";
-import { selectPosts, selectHasError, selectNextQuerry, selectIsLoading, fetchPosts } from './wallSlice';
+import { selectPosts, selectHasError, selectNextQuery, selectIsLoading, selectIsFetchingMore, fetchPosts, fetchMorePosts } from './wallSlice';
 import { Loading } from "../Loading/Loading"
 import { ErrorComp } from "../ErrorComp/ErrorComp";
 
@@ -13,11 +13,28 @@ export const Wall = () => {
   
   const posts = useSelector(selectPosts);
   const isLoading = useSelector(selectIsLoading);
-  let hasError = useSelector(selectHasError);
+  const hasError = useSelector(selectHasError);
+  const nextQuery = useSelector(selectNextQuery);
+  const isFetchingMore = useSelector(selectIsFetchingMore);
   
   useEffect(() => {
     dispatch(fetchPosts('hot', ''));
   }, [dispatch]);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1000) {
+        if(!isLoading && !hasError && !isFetchingMore){
+          dispatch(fetchMorePosts({
+            type: 'hot',
+            query: nextQuery
+          }));
+      }
+      }
+    }
+  }, [dispatch, nextQuery, hasError, isLoading, isFetchingMore]);
+
+  
 
   if(isLoading){
     return <Loading />;
@@ -25,6 +42,7 @@ export const Wall = () => {
   if(hasError){
     return <ErrorComp />;
   }
+
   
   return (
     <div className='wall'>

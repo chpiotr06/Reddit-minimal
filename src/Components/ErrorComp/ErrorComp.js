@@ -7,6 +7,7 @@ import { fetchPosts } from '../Wall/wallSlice';
 export const ErrorComp = () => {
   const dispatch = useDispatch();
   const handleClick = (e) => {
+    dispatch({type: 'wall/clearState'})
     dispatch(fetchPosts('hot'));
   }
   return (
